@@ -26,3 +26,10 @@ things in order
 * Web notifications 
 * Nicer web ui (graphs, responsive etc)
 * Web API
+
+
+## Known Issues
+
+If the checksum evaluates to "\n" this will add a line break. Ironically found this out with message: "data:hello world".
+
+Probably need to figure out how to handle that, or change the checksum method.

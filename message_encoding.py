@@ -1,7 +1,14 @@
 import serial
-
 from time import sleep
 
+# class MessageEncoderMeta(type):
+#     def __call__(cls, *args, **kwargs):
+#         instance = super().__call__(*args, **kwargs)
+#         instance.encode(*args, **kwargs)  # Encode the message immediately
+#         return instance.message
+#
+
+# metaclass=MessageEncoderMeta
 class MessageEncoder:
     def __init__(self, message_type, message_data):
         self.message_type = message_type
@@ -33,6 +40,7 @@ class SensorEncoder(MessageEncoder):
         enc_data = (':'.join([f"{str(k)}={str(v)}" for k, v in message_data.items()])).encode('utf-8')
         packet = self.make_serial_message(enc_data)
         return packet
+
 
 
 class CommandEncoder(MessageEncoder):

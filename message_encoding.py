@@ -1,5 +1,8 @@
+# This is a simulator that runs on mac
 import serial
 from time import sleep
+
+
 
 # class MessageEncoderMeta(type):
 #     def __call__(cls, *args, **kwargs):
